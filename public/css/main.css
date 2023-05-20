@@ -1,0 +1,173 @@
+@import url(cairo_font.css);
+
+:root {
+    /* --main-color: #34495e; */
+    --main-color: #212529;
+    --hover-color: #2c3e50;
+}
+
+* {
+    font-family: Cairo, Arial, Helvetica, sans-serif;
+}
+
+body {
+    direction: rtl;
+    user-select: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+.d-flex {
+    flex-wrap: wrap;
+}
+
+.custom-form {
+    max-width: 400px;
+    flex-grow: 1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px #ccc, -2px -2px 8px #ccc;
+}
+
+.ctm-btn {
+    background-color: var(--main-color);
+    min-width: 100px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ctm-btn:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+}
+
+.ctm-alert {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: fit-content;
+    z-index: 111;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.bg-dark {
+    background-color: var(--main-color);
+}
+
+.bg-primary {
+    background-color: #3498db;
+}
+
+.bg-dark,
+.bg-primary {
+    color: #fff;
+}
+
+.bg-dark:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+}
+
+.modal-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.card {
+    position: relative;
+}
+
+.card .links {
+    width: fit-content;
+    position: absolute;
+    top: 10px;
+    left:10px;
+    z-index: 1;
+}
+
+.card.book {
+    border-radius: 15px;
+    width: 13rem;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.card-title {
+    white-space: nowrap;
+    height: 20px;
+}
+
+.card.book .book-img,
+.card.category .category-img {
+    position: relative;
+    border-bottom-left-radius: 15px;
+    padding: 20px;
+    background-color: var(--main-color) !important;
+}
+
+.card.category .category-img {
+    padding: 5px;
+    width: 50px;
+}
+
+.card.book .book-img:after,
+.card.category .category-img:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    background-color: var(--main-color);
+    height: 20px;
+    width: 20px;
+}
+.card .edit-category{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+.card .card-body {
+    border-top-right-radius: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.card.book .card-body .card-text {
+    overflow-y: hidden;
+    height: 50px;
+    text-align: justify;
+}
+
+.sub-cats {
+    display: none;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.empty-box {
+    margin-top: 150px;
+    width: 300px;
+    display: none;
+}
+
+.empty-box img {
+    width: 100%;
+}
+.dropdown-menu{
+    width: max-content;
+}
+.dropdown-menu li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
