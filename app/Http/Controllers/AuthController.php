@@ -24,7 +24,7 @@ class AuthController extends Controller
             $request->session()->put('user', auth()->user());
             return redirect('/');
         }
-        return redirect()->back()->with('login_failed', 'عفوا لا يوجد تطابق للإيميل و كلمة السر');
+        return redirect()->back()->with('login_failed', 'إسم المستخدم أو كلمة السر غير صحيحة');
     }
     public function changePassword()
     {

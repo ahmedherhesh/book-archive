@@ -58,11 +58,11 @@
                 @endif
             </div>
             <div class="mb-2">
-                <label for="formFile" class="form-label d-block ctm-btn p-1 mt-3 rounded-3">
+                <label for="formUpdateFile" class="form-label d-block ctm-btn p-1 mt-3 rounded-3">
                     <img src="{{ asset('imgs/upload_file.svg') }}" alt="">
                     <span>اضغط هنا لإختيار الملف</span>
                 </label>
-                <input class="form-control d-none" type="file" id="formFile" name="file">
+                <input class="form-control d-none" type="file" id="formUpdateFile" name="file">
             </div>
             @if ($errors->has('file'))
                 <span class="text-danger text-direction-rtl">{{ $errors->first('file') }}</span>

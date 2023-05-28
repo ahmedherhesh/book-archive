@@ -27,13 +27,13 @@ class Item extends Model
     }
     function getFileAttribute($file)
     {
-        return $this->attributes['file'] ? asset("uploads/files/{$this->cat_id}/$file") : null;
+        return $this->attributes['file'] ? asset("uploads/files/$file") : null;
     }
 
     function setFileAttribute($file)
     {
         $file_name =  rand(1000, 9999) . time() . '.' . $file->extension();
-        $file->move(public_path("uploads/files/{$this->cat_id}"), $file_name);
+        $file->move(public_path("uploads/files"), $file_name);
         $this->attributes['file'] = $file_name;
     }
 }

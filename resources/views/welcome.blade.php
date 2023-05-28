@@ -11,11 +11,14 @@
 @section('content')
     @include('includes.nav')
     <div class="container mt-3" id="swipers">
-        {{ $empty = false }}
+        <?php $empty = false; ?>
         @foreach ($categories as $category)
             @if ($category->items->count() > 5)
-                {{ $empty = true }}
-                <h4 class="pe-5">{{ $category->name }}</h4>
+                <?php $empty = true; ?>
+                <div class="d-flex justify-content-between align-items-center ps-3 pe-5 ">
+                    <h4>{{ $category->name }}</h4>
+                    <a class="btn" href="{{ route('categories.show', $category->id) }}">عرض الكل</a>
+                </div>
                 <swiper-container class="mySwiper" space-between="20" slides-per-view="5">
                     @foreach ($category->items as $item)
                         <swiper-slide>

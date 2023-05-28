@@ -16,7 +16,7 @@ class ItemController extends MasterController
         // filter by:
         //terms
         if ($request->q)
-            $items->where('title', 'LIKE', '%' . $request->q . '%');
+            $items->where('title', 'LIKE', '%' . $request->q . '%')->orWhere('description', 'LIKE', '%' . $request->q . '%');
         //category
         if ($request->cat_id)
             $items->whereCatId($request->cat_id);
@@ -30,7 +30,7 @@ class ItemController extends MasterController
         else if (!$request->from && $request->to)
             $items->whereDate('date', '<=',  $request->to);
         //return date desc
-        $items = $items->latest()->paginate(15);
+        $items = $items->latest()->paginate(18);
         return view('items.items', ['items' => $items]);
     }
 
@@ -58,7 +58,6 @@ class ItemController extends MasterController
      */
     public function show(string $id)
     {
-        
     }
 
     /**

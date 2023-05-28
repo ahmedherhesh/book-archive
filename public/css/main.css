@@ -142,7 +142,7 @@ a {
 .card.book .card-body .card-text {
     overflow-y: hidden;
     height: 50px;
-    text-align: justify;
+    /* text-align: center; */
 }
 
 .sub-cats {

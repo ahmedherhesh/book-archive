@@ -12,7 +12,7 @@ class Category extends Model
 
     function items()
     {
-        return $this->hasMany(Item::class, 'cat_id')->limit(15);
+        return $this->hasMany(Item::class, 'cat_id')->latest()->limit(18);
     }
     function subCats()
     {

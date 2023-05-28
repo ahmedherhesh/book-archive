@@ -62,15 +62,18 @@
                                 <li>
                                     <a class="btn"
                                         href="{{ route('categories.show', $sub_cat->id) }}">{{ $sub_cat->name }}</a>
-                                    <div class="text-start">
-                                        <a class="text-secondary edit-btn" href="#" data-cat-id="{{ $sub_cat->id }}"
-                                            data-cat-parent-id="{{ $sub_cat->parent_id }}"
-                                            data-cat-name="{{ $sub_cat->name }}"><i
-                                                class="fa-solid fa-pen-to-square"></i></a>
-                                        <a class="text-secondary delete-btn" data-type="القسم"
-                                            href="{{ route('category.delete', $sub_cat->id) }}"><i
-                                                class="fa-solid fa-trash"></i></a>
-                                    </div>
+                                    @if ($user->id == $sub_cat->user_id || $user->role == 'admin')
+                                        <div class="text-start">
+                                            <a class="text-secondary edit-btn" href="#"
+                                                data-cat-id="{{ $sub_cat->id }}"
+                                                data-cat-parent-id="{{ $sub_cat->parent_id }}"
+                                                data-cat-name="{{ $sub_cat->name }}"><i
+                                                    class="fa-solid fa-pen-to-square"></i></a>
+                                            <a class="text-secondary delete-btn" data-type="القسم"
+                                                href="{{ route('category.delete', $sub_cat->id) }}"><i
+                                                    class="fa-solid fa-trash"></i></a>
+                                        </div>
+                                    @endif
                                 </li>
                             @endforeach
                         </ul>

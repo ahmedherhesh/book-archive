@@ -10,7 +10,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('items.index') }}">
-                        <img src="{{ asset('imgs/menu_book.svg') }}" alt=""> <span>الكتب الدورية</span>
+                        <img src="{{ asset('imgs/menu_book.svg') }}" alt=""> <span>جميع الكتب </span>
                     </a>
                 </li>
                 <li class="nav-item">

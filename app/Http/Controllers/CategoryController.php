@@ -46,7 +46,7 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        $items = Item::whereCatId($id)->orWhere('sub_cat_id', $id)->paginate(15);
+        $items = Item::whereCatId($id)->orWhere('sub_cat_id', $id)->latest()->paginate(18);
         return view('categories.category', ['items' => $items]);
     }
 
